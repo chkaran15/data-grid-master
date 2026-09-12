@@ -234,9 +234,9 @@ export function LeadsGrid({
                           lead={lead}
                           col={col}
                           onOpen={onOpen}
-                          onEditStart={() =>
-                            col.editor !== "none" && setEditing({ id: lead.id, key: col.key })
-                          }
+                          onEditStart={() => {
+                            if (col.editor !== "none") setEditing({ id: lead.id, key: col.key });
+                          }}
                         />
                       )}
                     </td>
@@ -275,7 +275,7 @@ function CellView({
 }: {
   lead: Lead;
   col: ColumnDef;
-  onOpen?: (lead: Lead) => void;
+  onOpen?: ((lead: Lead) => void) | undefined;
   onEditStart: () => void;
 }) {
   const editable = col.editor !== "none";
