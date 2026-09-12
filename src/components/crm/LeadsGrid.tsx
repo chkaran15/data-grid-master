@@ -91,7 +91,7 @@ export function LeadsGrid({
   return (
     <div className="relative overflow-auto rounded-lg border border-border bg-card">
       <table
-        className="w-full border-separate border-spacing-0"
+        className="w-full table-fixed border-separate border-spacing-0"
         style={{ minWidth: 40 + columns.reduce((a, c) => a + c.width, 0) }}
       >
         <thead>
