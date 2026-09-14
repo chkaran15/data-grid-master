@@ -44,12 +44,12 @@ export function FilterPanel({
     ]);
 
   return (
-    <aside className="flex w-72 shrink-0 flex-col gap-5 rounded-lg border border-border bg-card p-4">
+    <div className="flex max-h-[70vh] w-full flex-col gap-5 overflow-y-auto">
       <div className="flex items-center justify-between">
         <h2 className="flex items-center gap-2 text-sm font-semibold">
           <Filter className="size-4 text-primary" /> Filters
         </h2>
-        <Button variant="ghost" size="icon" className="size-7" onClick={onClose} aria-label="Hide filters">
+        <Button variant="ghost" size="icon" className="size-7" onClick={onClose} aria-label="Close filters">
           <X className="size-4" />
         </Button>
       </div>
@@ -181,6 +181,6 @@ export function FilterPanel({
           )}
         </div>
       </div>
-    </aside>
+    </div>
   );
 }
