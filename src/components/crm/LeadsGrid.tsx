@@ -54,6 +54,7 @@ type Props = {
   onReorder: (from: ColumnKey, to: ColumnKey) => void;
   onFreezeChange: (count: number) => void;
   onOpen?: (lead: Lead) => void;
+  onOpenPage?: (lead: Lead) => void;
 };
 
 export function LeadsGrid({
@@ -71,6 +72,7 @@ export function LeadsGrid({
   onReorder,
   onFreezeChange,
   onOpen,
+  onOpenPage,
 }: Props) {
   const [editing, setEditing] = useState<{ id: string; key: ColumnKey } | null>(null);
   const [dragKey, setDragKey] = useState<ColumnKey | null>(null);
